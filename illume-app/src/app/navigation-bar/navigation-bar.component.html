@@ -1,0 +1,52 @@
+<!-- <mat-toolbar>
+  <span class="custom-text">Illume</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="custom-button">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+  <button mat-icon-button class="custom-button">
+    <mat-icon
+      ><span class="material-symbols-outlined"> notifications </span></mat-icon
+    >
+  </button>
+</mat-toolbar> -->
+
+<mat-toolbar class="mat-toolbar">
+  <span class="custom-text">Illume</span>
+
+  <span style="width: 50%">
+    <input
+      (keyup)="getSearchText(searchText)"
+      class="form-control"
+      type="text"
+      name="search"
+      [(ngModel)]="searchText"
+      autocomplete="off"
+      placeholder="&#61442; Search here"
+    />
+  </span>
+  <span>
+    <button mat-icon-button class="custom-button">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+    <button mat-icon-button class="custom-button">
+      <mat-icon
+        ><span class="material-symbols-outlined">
+          notifications
+        </span></mat-icon
+      >
+    </button>
+  </span>
+</mat-toolbar>
+
+<nav mat-tab-nav-bar mat-align-tabs="center">
+  <a mat-tab-link routerLink="" routerLinkActive="mat-primary">DASHBOARD </a>
+  <a mat-tab-link routerLink="" routerLinkActive="mat-primary">DIAGONISTCS</a>
+  <a mat-tab-link routerLink="" routerLinkActive="mat-primary">DESIGN </a>
+  <a mat-tab-link routerLink="" routerLinkActive="mat-primary">DELIVERY</a>
+  <a mat-tab-link routerLink="" routerLinkActive="mat-primary">ASSESSOR </a>
+  <a mat-tab-link routerLink="certificate" routerLinkActive="mat-primary">MY Certificate</a>
+
+  <a mat-tab-link routerLink="" routerLinkActive="mat-primary">POLICY</a>
+</nav>
+<router-outlet></router-outlet>

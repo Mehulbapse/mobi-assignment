@@ -1,0 +1,114 @@
+<h3>My Certificates</h3>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="cards-wrapper">
+        <div class="card d-none d-md-block" *ngFor="let num of array">
+          <img [src]="num" class="card-img-top" alt="..." />
+        </div>
+      </div>
+    </div>
+  </div>
+  <a
+    class="carousel-control-prev"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a
+    class="carousel-control-next"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<h5>My Testimonials</h5>
+<p>Pending</p>
+
+<div
+  *ngFor="let user of pendingArray | searchfilter : serachedValue"
+  style="padding-bottom: 15px"
+>
+  <mat-card class="example-card">
+    <span style="display: flex; justify-content: space-between">
+      <div
+        mat-card-avatar
+        [style.background-image]="'url(' + user.user.avatar + ')'"
+        style="border: solid 1px black"
+      ></div>
+
+      <mat-card-content
+        ><p style="text-align: justify; padding-left: 20px">
+          {{ user.text }}
+        </p>
+      </mat-card-content>
+    </span>
+    <div class="example-spacer">
+      <p>
+        <span class="material-symbols-outlined"> forward </span>
+        <span style="padding-left: 20px; font-size: large">{{
+          user.user.name
+        }}</span>
+      </p>
+
+      <span>
+        <button
+          type="button"
+          class="btn btn-tertiary"
+          style="color: rgb(65, 203, 65)"
+          mdbRipple
+          (click)="onPendingAccept(user.id)"
+        >
+          Accept
+        </button>
+        <button
+          type="button"
+          class="btn btn-tertiary"
+          style="color: rgb(217, 36, 13)"
+          mdbRipple
+          (click)="onPendingReject(user.id)"
+        >
+          Decline
+        </button>
+      </span>
+    </div>
+  </mat-card>
+</div>
+
+<p>Approved</p>
+
+<div *ngFor="let user of approvedArray" style="padding-bottom: 15px">
+  <mat-card class="example-card">
+    <span style="display: flex; justify-content: space-between">
+      <div
+        mat-card-avatar
+        [style.background-image]="'url(' + user.user.avatar + ')'"
+        style="border: solid 1px black"
+      ></div>
+
+      <mat-card-content
+        ><p style="text-align: justify; padding-left: 20px">
+          {{ user.text }}
+        </p>
+      </mat-card-content>
+    </span>
+    <div class="example-spacer">
+      <p>
+        <span class="material-symbols-outlined"> forward </span>
+        <span style="padding-left: 20px; font-size: large">{{
+          user.user.name
+        }}</span>
+      </p>
+
+      <span> </span>
+    </div>
+  </mat-card>
+</div>

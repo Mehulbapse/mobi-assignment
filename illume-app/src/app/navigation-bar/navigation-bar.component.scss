@@ -1,0 +1,30 @@
+
+.custom-toolbar {
+    background-color: #ffffff;
+    // border: solid 1px black;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .custom-button{
+    border: none;
+  }
+
+  .custom-text{
+    text-transform: capitalize;
+    text-transform: uppercase;
+  }
+
+  .mat-toolbar{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-control {
+    box-shadow: 0 10px 10px 0 #babfc7;
+  }
+  .form-control::placeholder  {
+    font-family: FontAwesome;
+  }
