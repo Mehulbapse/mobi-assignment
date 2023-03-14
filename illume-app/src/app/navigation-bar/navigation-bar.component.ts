@@ -1,5 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { DataShareService } from '../data-share.service';
+
 
 
 @Component({
@@ -10,16 +10,13 @@ import { DataShareService } from '../data-share.service';
 export class NavigationBarComponent implements OnInit {
   
   searchText:any = "";
-  constructor(private service:DataShareService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
     
   }
 
-  getSearchText(text){
-    this.service.setsearchValue(text)
-  }
    
 
 }

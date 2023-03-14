@@ -16,7 +16,7 @@
 
   <span style="width: 50%">
     <input
-      (keyup)="getSearchText(searchText)"
+      
       class="form-control"
       type="text"
       name="search"
@@ -39,7 +39,7 @@
   </span>
 </mat-toolbar>
 
-<nav mat-tab-nav-bar mat-align-tabs="center">
+<!-- <nav mat-tab-nav-bar mat-align-tabs="center">
   <a mat-tab-link routerLink="" routerLinkActive="mat-primary">DASHBOARD </a>
   <a mat-tab-link routerLink="" routerLinkActive="mat-primary">DIAGONISTCS</a>
   <a mat-tab-link routerLink="" routerLinkActive="mat-primary">DESIGN </a>
@@ -48,5 +48,19 @@
   <a mat-tab-link routerLink="certificate" routerLinkActive="mat-primary">MY Certificate</a>
 
   <a mat-tab-link routerLink="" routerLinkActive="mat-primary">POLICY</a>
-</nav>
-<router-outlet></router-outlet>
+</nav> -->
+
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label=" DASHBOARD " routerLink=""> DASHBOARD </mat-tab>
+  <mat-tab label="DIAGONISTCS"> DIAGONISTCS </mat-tab>
+  <mat-tab label="DESIGN"> DESIGN</mat-tab>
+  <mat-tab label="DELIVERY"> DELIVERY</mat-tab>
+  <mat-tab label="ASSESSOR"> ASSESSOR </mat-tab>
+  <mat-tab label="MY Certificate" routerLink="certificate">
+    <app-certifiacte [serachedValue] ="searchText"> </app-certifiacte
+  ></mat-tab>
+  <mat-tab label="POLICY"> POLICY</mat-tab>
+</mat-tab-group>
+
+
+<!-- <router-outlet></router-outlet> -->

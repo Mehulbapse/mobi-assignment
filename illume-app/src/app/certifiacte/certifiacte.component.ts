@@ -1,6 +1,4 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
-import { DataShareService } from '../data-share.service';
-import { ResponseData } from '../data.model';
+import { Component, Input, OnInit } from '@angular/core';
 import { IllumeServiceService } from '../services/illume-service.service';
 
 @Component({
@@ -17,11 +15,13 @@ export class CertifiacteComponent implements OnInit {
   images: any;
   responsiveOptions;
   certifiacteArray: String[] = [];
-  serachedValue: any;
+  // serachedValue: any;
   interval: any;
+
+  @Input() serachedValue :any
   constructor(
     private service: IllumeServiceService,
-    private dataService: DataShareService
+    
   ) {
     this.responsiveOptions = [
       {
@@ -31,7 +31,7 @@ export class CertifiacteComponent implements OnInit {
       },
     ];
   }
-
+ 
   ngOnInit(): void {
     this.service.getData().subscribe((response: any) => {
       if (response) {
@@ -44,7 +44,7 @@ export class CertifiacteComponent implements OnInit {
       }
     });
 
-    this.startTrackingLoop();
+   
   }
 
   fetch() {
@@ -90,15 +90,5 @@ export class CertifiacteComponent implements OnInit {
     this.pendingArray = this.pendingArray.filter((val: any) => val.id != id);
   }
 
-  startTrackingLoop() {
-    this.interval = setInterval(() => {
-      this.dataService.getsearchValue().subscribe((val: any) => {
-        this.serachedValue = val;
-      });
-    }, 1000);
-  }
-  ngOnDestroy() {
-    clearInterval(this.interval);
-    this.serachedValue = '';
-  }
+  
 }

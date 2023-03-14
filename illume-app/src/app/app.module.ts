@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { CertifiacteComponent } from './certifiacte/certifiacte.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -70,7 +70,8 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     CarouselModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   
     
   ],
