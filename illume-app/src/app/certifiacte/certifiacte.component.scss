@@ -51,3 +51,31 @@
         0 1px 1px 0 #9b9b9b,
         0 1px 3px 0 #9b9b9b;
 }
+
+.main-div{
+  margin: auto;
+  margin-top: 10px;
+  box-shadow: 1px -1px 8px #888888;
+  width: 98%;
+  
+}
+
+.pending-card{
+  margin: auto;
+  padding-bottom: 15px;
+  width:  98%;
+}
+
+.approved-card{
+  margin: auto;
+  padding-bottom: 15px;
+  width:  98%;
+}
+
+.mat-card-avatar{
+ border: solid 1px black;
+ width: 90px !important;
+ height: 90px !important;
+ background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+ background-size: cover;
+}
